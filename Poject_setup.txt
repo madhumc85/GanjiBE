@@ -1,0 +1,29 @@
+RUN APPLICATION
+********************************************************
+Run EmbeddedJetty.java
+
+
+MYSQL
+********************************************************
+MySql installation link
+http://websystique.com/misc/how-to-setup-mysql-on-local-pc/
+
+
+
+GIT
+********************************************************
+Git download link  https://git-scm.com/downloads
+
+<===CLONE===>
+git clone https://github.com/madhumc85/GanjiBE.git
+
+navigate to your project location
+git status
+git add --a
+git commit -m "first commit"
+git push -u origin master
+
+
+IntelliJ
+********************************************************
+

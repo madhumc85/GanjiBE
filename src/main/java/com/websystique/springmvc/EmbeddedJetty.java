@@ -16,7 +16,7 @@ public class EmbeddedJetty {
 
     //private static final Logger logger = LoggerFactory.getLogger(EmbeddedJetty.class);
     private static final int DEFAULT_PORT = 8080;
-    private static final String CONTEXT_PATH = "/rice/";
+    private static final String CONTEXT_PATH = "/";
     private static final String CONFIG_LOCATION = "com.websystique.springmvc.configuration";
     private static final String MAPPING_URL = "/*";
     private static final String DEFAULT_PROFILE = "dev";

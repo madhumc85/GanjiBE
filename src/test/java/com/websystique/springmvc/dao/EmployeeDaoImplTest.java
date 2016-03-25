@@ -22,7 +22,7 @@ public class EmployeeDaoImplTest extends EntityDaoImplTest{
 		IDataSet dataSet = new FlatXmlDataSet(this.getClass().getClassLoader().getResourceAsStream("Employee.xml"));
 		return dataSet;
 	}
-	
+
 	/* In case you need multiple datasets (mapping different tables) and you do prefer to keep them in separate XML's
 	@Override
 	protected IDataSet getDataSet() throws Exception {
@@ -41,19 +41,19 @@ public class EmployeeDaoImplTest extends EntityDaoImplTest{
 		Assert.assertNull(employeeDao.findById(3));
 	}
 
-	
+
 	@Test
 	public void saveEmployee(){
 		employeeDao.saveEmployee(getSampleEmployee());
 		Assert.assertEquals(employeeDao.findAllEmployees().size(), 3);
 	}
-	
+
 	@Test
 	public void deleteEmployeeBySsn(){
 		employeeDao.deleteEmployeeBySsn("11111");
 		Assert.assertEquals(employeeDao.findAllEmployees().size(), 1);
 	}
-	
+
 	@Test
 	public void deleteEmployeeByInvalidSsn(){
 		employeeDao.deleteEmployeeBySsn("23423");
@@ -64,7 +64,7 @@ public class EmployeeDaoImplTest extends EntityDaoImplTest{
 	public void findAllEmployees(){
 		Assert.assertEquals(employeeDao.findAllEmployees().size(), 2);
 	}
-	
+
 	@Test
 	public void findEmployeeBySsn(){
 		Assert.assertNotNull(employeeDao.findEmployeeBySsn("11111"));
@@ -76,7 +76,7 @@ public class EmployeeDaoImplTest extends EntityDaoImplTest{
 		employee.setName("Karen");
 		employee.setSsn("12345");
 		employee.setSalary(new BigDecimal(10980));
-		employee.setJoiningDate(new LocalDate());
+		employee.setJoiningDate("2015-12-12");
 		return employee;
 	}
 
