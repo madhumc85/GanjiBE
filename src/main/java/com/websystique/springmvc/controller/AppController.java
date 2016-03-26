@@ -18,7 +18,7 @@ import com.websystique.springmvc.model.Employee;
 import com.websystique.springmvc.service.EmployeeService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping(value = {"/"}, headers = "Accept=*/*")
 public class AppController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class AppController {
      * This method will list all existing employees.
      */
     @RequestMapping(value = {"/", "/list"}, method = RequestMethod.GET)
-    public Collection<Employee> listEmployees(ModelMap model) {
+    public List<Employee> listEmployees(ModelMap model) {
         List<Employee> employees = service.findAllEmployees();
         model.addAttribute("employees", employees);
         return employees;
@@ -70,7 +70,7 @@ public class AppController {
 		}*/
 
 		/*
-		 * Preferred way to achieve uniqueness of field [ssn] should be implementing custom @Unique annotation 
+         * Preferred way to achieve uniqueness of field [ssn] should be implementing custom @Unique annotation
 		 * and applying it on field [ssn] of Model class [Employee].
 		 * 
 		 * Below mentioned peace of code [if block] is to demonstrate that you can fill custom errors outside the validation
